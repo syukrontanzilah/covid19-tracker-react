@@ -4,6 +4,7 @@ import {FormControl, Select, MenuItem, Card, CardContent,} from '@material-ui/co
 import InfoBox from './InfoBox';
 import Map from './Map';
 import Table from './Table';
+import { sortData } from './util';
 
 
 const App = () => {
@@ -30,7 +31,8 @@ const getCountriesData= async () => {
       value: country.countryInfo.iso2
       }));
 
-    setTableData(data)
+      const sortedData = sortData(data)
+    setTableData(sortedData)
     setCountries(countries)
   })
 }
